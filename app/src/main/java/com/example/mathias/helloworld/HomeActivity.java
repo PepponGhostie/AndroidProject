@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class HomeActivity extends Activity {
 
     private String welcomeMessage = "Welcome: " + UserStatic.getName();
-
+    SlideOutContainer root;
 
 
 
@@ -21,7 +21,8 @@ public class HomeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
+        this.root = (SlideOutContainer) this.getLayoutInflater().inflate(R.layout.activity_home, null);
+        this.setContentView(root);
         TextView welcomeView = (TextView) findViewById(R.id.WelcomeView);
         welcomeView.setText(welcomeMessage);
 
@@ -34,6 +35,10 @@ public class HomeActivity extends Activity {
             }
         });
 
+    }
+
+    public void toggleMenu(View v){
+        this.root.toggleMenu();
     }
 
     @Override
