@@ -11,29 +11,14 @@ import android.widget.TextView;
 
 public class HomeActivity extends Activity {
 
-    private String welcomeMessage = "Welcome: " + UserStatic.getName();
     SlideOutContainer root;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
         this.root = (SlideOutContainer) this.getLayoutInflater().inflate(R.layout.activity_home, null);
         this.setContentView(root);
-        TextView welcomeView = (TextView) findViewById(R.id.WelcomeView);
-        welcomeView.setText(welcomeMessage);
 
-        Button btnToMap = (Button) findViewById(R.id.ToMapButton);
-        btnToMap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, MapsActivity.class);
-                startActivity(intent);
-            }
-        });
 
     }
 

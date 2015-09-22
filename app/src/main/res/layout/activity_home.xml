@@ -3,11 +3,11 @@
     android:layout_height="match_parent" >
 
     <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#444488"
-    android:orientation="vertical" >
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#444488"
+        android:orientation="vertical" >
 
         <Button
             android:layout_width="match_parent"
@@ -27,37 +27,25 @@
             android:onClick="toggleMenu"
             android:text="Button 3" />
     </LinearLayout>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#888888"
         android:orientation="vertical"
-        android:gravity="center"
-        >
+        android:gravity="center" >
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Welcome: !"
-            android:id="@+id/WelcomeView"
-            android:layout_marginBottom="20dp"
-            android:layout_alignBottom="@+id/PasswordBox"
-            />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Confirm"
-            android:id="@+id/ToMapButton"
-            android:layout_marginTop="35dp"
-            android:layout_centerHorizontal="true" />
+             />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="toggleMenu"
             android:text="Toggle Menu" />
-
     </LinearLayout>
 
 </com.example.mathias.helloworld.SlideOutContainer>
