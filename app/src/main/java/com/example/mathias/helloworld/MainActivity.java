@@ -42,6 +42,15 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+        Button btnToBth = (Button) findViewById(R.id.btnToBth);
+        btnToBth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BluetoothActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

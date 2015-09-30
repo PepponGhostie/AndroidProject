@@ -6,46 +6,35 @@ import android.bluetooth.BluetoothAdapter;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-
-import java.util.ArrayList;
 
 /**
  * Created by martin Hansen on 27-09-2015.
  */
-public class BluetoothActivity extends Activity implements DeviceList{
-    private Activity thisActivity = this;
-    private BluetoothAdapter mBthAdapter;
-    public static int REQUEST_BLUETOOTH = 1;
-    protected ArrayList<DeviceList> deviceItemList;
+public class BluetoothActivity extends Activity {
+    public static int REQUEST_BLUETOOTH_ENABLE = 1;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        BluetoothAdapter mBthAdapter = BluetoothAdapter.getDefaultAdapter();
-        if (mBthAdapter == null) {
+        //Create a bluetooth adapter to interface with the device's bluetooth
+        BluetoothAdapter mBtAdapter = BluetoothAdapter.getDefaultAdapter();
+
+        //Bluetooth is not supported if mBtAdapter is null after calling .getDefaultAdapter()
+        if(mBtAdapter == null) {
             new AlertDialog.Builder(this)
-                    .setTitle("Not compatible")
+                    .setTitle("Action is not supported")
                     .setMessage("Your phone does not support bluetooth")
                     .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         @Override
-                        public void onClick(DialogInterface dialog, int which){
-                    }})
-                    .setIcon(android.R.drawable.ic_dialog_alert)
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    })
                     .show();
         }
-        if (!mBthAdapter.isEnabled()) {
-            Intent enableBT = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivityForResult(enableBT, REQUEST_BLUETOOTH);
+        else if(!mBtAdapter.isEnabled()) {
+            Intent enableBt = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(enableBt, REQUEST_BLUETOOTH_ENABLE);
         }
-    }
-
-    public void onCreateDeviceList(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        Log.d("DEVICELIST", "Super called for DeviceListFragment onCreate\n");
-        deviceItemList = new ArrayList<DeviceItem>();
-
     }
 }
