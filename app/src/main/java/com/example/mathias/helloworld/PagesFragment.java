@@ -33,7 +33,7 @@ public class PagesFragment extends Fragment {
     private ArrayList<String> item;
     private ArrayAdapter<String> mArrayAdapter;
     private BroadcastReceiver mReceiver;
-    
+
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
