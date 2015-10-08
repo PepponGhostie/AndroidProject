@@ -33,22 +33,7 @@ public class PagesFragment extends Fragment {
     private ArrayList<String> item;
     private ArrayAdapter<String> mArrayAdapter;
     private BroadcastReceiver mReceiver;
-
-<<<<<<< HEAD
-=======
-
-    // Create a BroadcastReceiver for ACTION_FOUND
-
-
-    // Register the BroadcastReceiver
-    /*IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-    registerReceiver(mReceiver, filter); // Don't forget to unregister during onDestroy*/
-
-
-
-	public PagesFragment(){}
-	
->>>>>>> 87bb8502b3a8747561810b1f063e08cd2ed2b0ca
+    
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
@@ -147,8 +132,4 @@ public class PagesFragment extends Fragment {
         super.onDestroyView();
         getActivity().unregisterReceiver(mReceiver);
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 87bb8502b3a8747561810b1f063e08cd2ed2b0ca
 }
