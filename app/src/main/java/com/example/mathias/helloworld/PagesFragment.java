@@ -22,14 +22,6 @@ public class PagesFragment extends Fragment {
     private ArrayAdapter<String> mArrayAdapter;
     private BroadcastReceiver mReceiver;
 
-
-
-    // Create a BroadcastReceiver for ACTION_FOUND
-
-    // Register the BroadcastReceiver
-    /*IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-    registerReceiver(mReceiver, filter); // Don't forget to unregister during onDestroy*/
-
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
@@ -58,7 +50,7 @@ public class PagesFragment extends Fragment {
         mArrayAdapter = new ArrayAdapter<>(this.getActivity(), android.R.layout.simple_list_item_1, item);
         listView = (ListView) rootView.findViewById(R.id.listView);
         listView.setAdapter(mArrayAdapter);
-          
+
         return rootView;
     }
     @Override
