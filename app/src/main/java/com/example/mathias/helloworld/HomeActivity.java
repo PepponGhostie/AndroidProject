@@ -181,16 +181,16 @@ public class HomeActivity extends Activity {
                 fragment = new FindTreasureFragment();
                 break;
             case 2:
-                fragment = new PhotosFragment();
+                fragment = new OptionsFragment();
                 break;
             case 3:
                 fragment = new CommunityFragment();
                 break;
             case 4:
-                fragment = new PagesFragment();
+                fragment = new TakeTreasureFragment();
                 break;
             case 5:
-                fragment = new WhatsHotFragment();
+                fragment = new HighscoreFragment();
                 break;
 
             default:
